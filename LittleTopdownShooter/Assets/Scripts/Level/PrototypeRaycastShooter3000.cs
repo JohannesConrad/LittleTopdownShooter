@@ -6,16 +6,18 @@ public class PrototypeRaycastShooter3000 : MonoBehaviour
 {
 
     public Transform firePoint;
+    public GameObject hitEffect;
+    public LineRenderer lineRenderer;
 
     // Update is called once per frame
     void Update()
     {
         if(Input.GetButtonDown("Fire1")){
-            Shoot();
+            StartCoroutine(Shoot());
         }
     }
 
-    void Shoot() {
+    IEnumerator Shoot() {
         RaycastHit2D hitInfo = Physics2D.Raycast(firePoint.position,firePoint.up);
         Debug.Log("shot");
         if(hitInfo){
@@ -25,6 +27,15 @@ public class PrototypeRaycastShooter3000 : MonoBehaviour
                 Debug.Log("hit sth with health");
                 healthScript.takeDamage(100);
             }
+            lineRenderer.SetPosition(0, firePoint.position);
+            lineRenderer.SetPosition(1, hitInfo.point);
+        }else{
+            lineRenderer.SetPosition(0, firePoint.position);
+            lineRenderer.SetPosition(1, firePoint.position + firePoint.up * 100);
         }
+        Instantiate(hitEffect, hitInfo.point, Quaternion.identity);
+        lineRenderer.enabled = true;
+        yield return new WaitForSeconds(0.03f);
+        lineRenderer.enabled = false;
     }
 }
