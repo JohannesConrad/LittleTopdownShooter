@@ -6,6 +6,9 @@ public class LevelGenerator : MonoBehaviour
 {
     public GameObject smartWall;
     
+    public GameObject playerPrefab;
+
+    public EnemySpawner enemySpawner;
 
     public float wallProbablility = 0.07f;
     public float wallProbablilityIncrease = 0.05f;
@@ -19,8 +22,9 @@ public class LevelGenerator : MonoBehaviour
         (float,float) keyRoot = (root.transform.position.x, root.transform.position.y);
         map.Add(keyRoot, root);
         processTile(root, wallProbablility);
-        Debug.Log("Done processing tiles, start postprocessing!");
         makeInnerWallsBreakable();
+        spawnPlayer();
+        enemySpawner.spawnEnemies();
     }
 
     void processTile(GameObject parent, float newWallProbability) {
@@ -99,7 +103,6 @@ public class LevelGenerator : MonoBehaviour
             GameObject currentWall = enumerator.Current.Value;
             if(isUnbreakable(currentWall)){
                 if(isNotEdge(currentWall)){
-                    Debug.Log("Blarg3");
                     currentWall.GetComponent<WallScript>().setBreakable();
                 }
             }
@@ -107,8 +110,6 @@ public class LevelGenerator : MonoBehaviour
     }
 
     private bool isUnbreakable(GameObject obj) {
-        bool a = obj.GetComponent<WallScript>().isUnbreakable();
-        Debug.Log(a);
         return obj.GetComponent<WallScript>().isUnbreakable();
     }
 
@@ -119,5 +120,31 @@ public class LevelGenerator : MonoBehaviour
         (float,float) downN = (pos.x,pos.y -1);
         (float,float) leftN = (pos.x -1,pos.y);
         return map.ContainsKey(upN) && map.ContainsKey(rightN) && map.ContainsKey(downN) && map.ContainsKey(leftN);
+    }
+
+    private void spawnPlayer(){
+        Instantiate(playerPrefab, new Vector3(0.0f,0.0f,0.0f), Quaternion.identity);
+    }
+
+    public Vector3 getRandomFreeTilePositionExceptRoot(){
+        return getRandomFreeTilePositionExceptRootMinDistance(0);
+    }
+
+    public Vector3 getRandomFreeTilePositionExceptRootMinDistance(int minDistance){
+        List<(float,float)> tileList = new List<(float,float)>(map.Keys);
+        while(tileList.Count > 0){
+            int randomIndex = (int)Random.Range(0.0f,tileList.Count);
+            (float,float) currentKey = tileList[randomIndex];
+            if(isTileForKeyEmpty(currentKey) && (currentKey.Item1 >= minDistance || currentKey.Item2 >= minDistance)){
+                return new Vector3(currentKey.Item1, currentKey.Item2, 0f);
+            }else{
+                tileList.RemoveAt(randomIndex);
+            }
+        }
+        return new Vector3(0f, 0f, 0f);
+    }
+
+    private bool isTileForKeyEmpty((float, float) key){
+        return map[key].GetComponent<WallScript>().isEmptyTile();
     }
 }

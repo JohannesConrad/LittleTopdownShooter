@@ -48,4 +48,8 @@ public class WallScript : MonoBehaviour , HealthScript {
             }
         }
     }
+
+    public bool isEmptyTile() {
+        return type == 0;
+    }
 }

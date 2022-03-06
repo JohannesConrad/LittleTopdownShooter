@@ -43,7 +43,12 @@
      <Compile Include="Assets\Scripts\Level\HealthScript.cs" />
      <Compile Include="Assets\Scripts\Level\WallScript.cs" />
      <Compile Include="Assets\Scripts\Level\RaycastGunScript.cs" />
+     <Compile Include="Assets\Scripts\Level\EnemyHealth.cs" />
+     <Compile Include="Assets\Scripts\Level\EnemySpawner.cs" />
      <Compile Include="Assets\Scripts\Level\DestroyAfter.cs" />
+     <Compile Include="Assets\Scripts\Enemy\SpinShooter\SpinScript.cs" />
+     <Compile Include="Assets\Scripts\Enemy\SpinShooter\hexagonProjectileShooting.cs" />
+     <Compile Include="Assets\Scripts\Enemy\SpinShooter\projectileImpact.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.26f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
