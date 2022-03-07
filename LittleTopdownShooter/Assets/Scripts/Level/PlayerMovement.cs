@@ -9,10 +9,19 @@ public class PlayerMovement : MonoBehaviour {
     public Rigidbody2D rb;
     public Camera cam;
 
+    public GameObject rightGun;
+    public GameObject leftGun;
+
+    public Transform rightHand;
+    public Transform leftHand;
     Vector2 movement;
     Vector2 mousePosition;
 
-    // Update is called once per frame
+    void Start(){
+        Instantiate(rightGun, rightHand);
+        Instantiate(leftGun, leftHand);
+    }
+
     void Update() {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");

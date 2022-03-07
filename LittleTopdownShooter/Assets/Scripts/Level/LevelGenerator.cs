@@ -7,7 +7,6 @@ public class LevelGenerator : MonoBehaviour
     public GameObject smartWall;
     
     public GameObject playerPrefab;
-
     public EnemySpawner enemySpawner;
 
     public float wallProbablility = 0.07f;
@@ -23,8 +22,8 @@ public class LevelGenerator : MonoBehaviour
         map.Add(keyRoot, root);
         processTile(root, wallProbablility);
         makeInnerWallsBreakable();
-        spawnPlayer();
-        enemySpawner.spawnEnemies();
+        GameObject player = spawnPlayer().GetComponentInChildren<PlayerHealthScript>().gameObject;
+        enemySpawner.spawnEnemies(player);
     }
 
     void processTile(GameObject parent, float newWallProbability) {
@@ -122,8 +121,8 @@ public class LevelGenerator : MonoBehaviour
         return map.ContainsKey(upN) && map.ContainsKey(rightN) && map.ContainsKey(downN) && map.ContainsKey(leftN);
     }
 
-    private void spawnPlayer(){
-        Instantiate(playerPrefab, new Vector3(0.0f,0.0f,0.0f), Quaternion.identity);
+    private GameObject spawnPlayer(){
+        return Instantiate(playerPrefab, new Vector3(0.0f,0.0f,0.0f), Quaternion.identity);
     }
 
     public Vector3 getRandomFreeTilePositionExceptRoot(){

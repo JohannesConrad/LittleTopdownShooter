@@ -12,8 +12,7 @@ public class hexagonProjectileShooting : MonoBehaviour
     }
 
     IEnumerator shootAndRepeat() {
-        yield return new WaitForSeconds(1.5f);
-        Debug.Log("Nun wird der Böppel instanziiert und beschleunigt.");
+        yield return new WaitForSeconds(0.8f);
         GameObject projectile = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
         projectile.GetComponent<Rigidbody2D>().AddForce(firePoint.up * projectileSpeed);
         StartCoroutine(shootAndRepeat());

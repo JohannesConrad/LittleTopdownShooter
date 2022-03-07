@@ -40,8 +40,7 @@ public class WallScript : MonoBehaviour , HealthScript {
     }
 
     public void takeDamage(int damage){
-        Debug.Log("Wall damaged");
-        if(type == 1){
+        if(type == 1) {
             currentHealth = currentHealth -= damage;
             if(currentHealth <= 0){
                 this.setEmpty();

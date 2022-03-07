@@ -548,9 +548,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d1f45f5f6e59914294f7bcf8a726c0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1000
+  maxHealth: 1200
   currentHealth: 0
-  rotateSpeed: 50
+  rotateSpeed: 66.9
 --- !u!58 &2215685923921673030
 CircleCollider2D:
   m_ObjectHideFlags: 0
