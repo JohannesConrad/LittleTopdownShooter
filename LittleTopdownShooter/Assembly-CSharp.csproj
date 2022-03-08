@@ -37,10 +37,12 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Level\CameraScript.cs" />
+     <Compile Include="Assets\Scripts\Enemy\BasicWalker\WalterHealth.cs" />
      <Compile Include="Assets\Scripts\Level\Player\PlayerHealthInterface.cs" />
      <Compile Include="Assets\Scripts\Enemy\SpinShooter\SpinScript.cs" />
      <Compile Include="Assets\Scripts\Level\PrototypeRaycastShooter3000.cs" />
      <Compile Include="Assets\Scripts\Enemy\SpinShooter\projectileImpact.cs" />
+     <Compile Include="Assets\Scripts\Level\ReferencingPlayer.cs" />
      <Compile Include="Assets\Scripts\Level\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\Level\LevelGenerator.cs" />
      <Compile Include="Assets\Scripts\Level\HealthScript.cs" />
@@ -54,8 +56,12 @@
      <Compile Include="Assets\Scripts\Enemy\BasicWalker\WaltersRaketenscript.cs" />
      <Compile Include="Assets\Scripts\Enemy\BasicWalker\BasicWalterMovement.cs" />
      <Compile Include="Assets\Scripts\Enemy\BasicWalker\Explosion.cs" />
-     <Compile Include="Assets\Scripts\Enemy\BasicWalker\WalterHealth.cs" />
-     <Compile Include="Assets\Scripts\Level\ReferencingPlayer.cs" />
+     <Compile Include="Assets\Scripts\Enemy\ViereckHarry\ViereckHarryMovement.cs" />
+     <Compile Include="Assets\Scripts\Enemy\ViereckHarry\HarryHealth.cs" />
+     <Compile Include="Assets\Scripts\Enemy\ViereckHarry\ViereckScript.cs" />
+     <Compile Include="Assets\Scripts\Enemy\Pickups\GoldenPickup.cs" />
+     <Compile Include="Assets\Scripts\Level\Player\PlayerPickups.cs" />
+     <Compile Include="Assets\Scripts\Level\Player\IPlayerPickup.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.26f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

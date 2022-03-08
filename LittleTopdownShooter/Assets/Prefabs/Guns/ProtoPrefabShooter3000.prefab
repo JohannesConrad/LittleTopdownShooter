@@ -260,4 +260,4 @@ MonoBehaviour:
   hitEffect: {fileID: 859913312999148758, guid: ee7017ac6a099694fbc6dae8adfcf3df, type: 3}
   lineRenderer: {fileID: 5730371913618601135}
   damage: 50
-  fireRate: 0.4
+  fireRate: 0.3

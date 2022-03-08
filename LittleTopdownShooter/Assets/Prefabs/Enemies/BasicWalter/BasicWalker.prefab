@@ -390,6 +390,7 @@ MonoBehaviour:
   fireRate: 0.6
   firepoint: {fileID: 6050217445858518563}
   rocket: {fileID: 8515792014355345080, guid: bf479340f8d54314f9aac94c8e86ab32, type: 3}
+  player: {fileID: 0}
 --- !u!58 &6050217446490944116
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -440,6 +441,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 300
+  goldenDrop: {fileID: 7722206016091691185, guid: 52f07400bb301f145a887d22a8505747, type: 3}
 --- !u!1 &6050217446527067433
 GameObject:
   m_ObjectHideFlags: 0
