@@ -127,7 +127,7 @@ MonoBehaviour:
   player: {fileID: 0}
   rb: {fileID: 545013010483295534}
   cam: {fileID: 545013011801644546}
-  rightGun: {fileID: 2204733293597796502, guid: e48ee726763ee504ea22e7c2ea63e9d9, type: 3}
+  rightGun: {fileID: 6408201627158171029, guid: a89f3162948771c4f82f075c4f1b67ce, type: 3}
   leftGun: {fileID: 2204733293597796502, guid: e48ee726763ee504ea22e7c2ea63e9d9, type: 3}
   rightHand: {fileID: 7344467284098443789}
   leftHand: {fileID: 1159915986179712204}

@@ -52,16 +52,18 @@
      <Compile Include="Assets\Scripts\Level\EnemyHealth.cs" />
      <Compile Include="Assets\Scripts\Level\Player\PlayerHealthScript.cs" />
      <Compile Include="Assets\Scripts\Level\EnemySpawner.cs" />
+     <Compile Include="Assets\Scripts\Level\Player\PlayerPickups.cs" />
      <Compile Include="Assets\Scripts\Level\DestroyAfter.cs" />
      <Compile Include="Assets\Scripts\Enemy\BasicWalker\WaltersRaketenscript.cs" />
      <Compile Include="Assets\Scripts\Enemy\BasicWalker\BasicWalterMovement.cs" />
-     <Compile Include="Assets\Scripts\Enemy\BasicWalker\Explosion.cs" />
-     <Compile Include="Assets\Scripts\Enemy\ViereckHarry\ViereckHarryMovement.cs" />
      <Compile Include="Assets\Scripts\Enemy\ViereckHarry\HarryHealth.cs" />
      <Compile Include="Assets\Scripts\Enemy\ViereckHarry\ViereckScript.cs" />
      <Compile Include="Assets\Scripts\Enemy\Pickups\GoldenPickup.cs" />
-     <Compile Include="Assets\Scripts\Level\Player\PlayerPickups.cs" />
+     <Compile Include="Assets\Scripts\Enemy\BasicWalker\Explosion.cs" />
+     <Compile Include="Assets\Scripts\Enemy\ViereckHarry\ViereckHarryMovement.cs" />
      <Compile Include="Assets\Scripts\Level\Player\IPlayerPickup.cs" />
+     <Compile Include="Assets\Scripts\Weapons\FireballShooter.cs" />
+     <Compile Include="Assets\Scripts\Weapons\FireBall1Script.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.26f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

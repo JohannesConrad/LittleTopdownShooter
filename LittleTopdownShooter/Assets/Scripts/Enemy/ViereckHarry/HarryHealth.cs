@@ -12,7 +12,7 @@ public class HarryHealth : MonoBehaviour , HealthScript
         currentHealth = maxHealth;
     }
 
-    public async void takeDamage(int damage){
+    public void takeDamage(int damage){
         currentHealth = currentHealth -= damage;
         if(currentHealth <= 0){
             dropLoot();
