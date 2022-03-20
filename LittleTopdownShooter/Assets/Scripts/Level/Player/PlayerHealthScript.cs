@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealthScript : MonoBehaviour, PlayerHealthInterface{
     public int maxHealth;
@@ -16,9 +17,10 @@ public class PlayerHealthScript : MonoBehaviour, PlayerHealthInterface{
     }
 
     public void takeDamage(int damage){
-        currentHealth -= damage;
+        currentHealth -= damage; 
         slider.value = currentHealth;
         if(currentHealth <= 0){
+            EnemySpawner.enemyAmount = 0;
             Destroy(gameObject);
         }
     }

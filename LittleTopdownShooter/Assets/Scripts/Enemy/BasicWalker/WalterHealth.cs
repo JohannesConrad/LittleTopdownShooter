@@ -17,6 +17,7 @@ public class WalterHealth : MonoBehaviour , HealthScript
         currentHealth = currentHealth -= damage;
         if(currentHealth <= 0){
             dropLoot();
+            EnemySpawner.enemyAmount--;
             Destroy(gameObject);
         }
     }

@@ -24,6 +24,7 @@ public class SpinScript : MonoBehaviour , HealthScript
     public void takeDamage(int damage){
         currentHealth = currentHealth -= damage;
         if(currentHealth <= 0){
+            EnemySpawner.enemyAmount--;
             Destroy(gameObject);        
         }
     }

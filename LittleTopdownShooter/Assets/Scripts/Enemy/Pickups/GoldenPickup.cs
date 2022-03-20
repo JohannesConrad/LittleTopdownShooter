@@ -8,12 +8,11 @@ public class GoldenPickup : MonoBehaviour {
         amount = Random.Range(30,70);
     }
     void OnTriggerEnter2D(Collider2D col){
-        IPlayerPickup player = col.transform.gameObject.GetComponent<IPlayerPickup>();
+        PlayerHealthInterface player = col.transform.gameObject.GetComponent<PlayerHealthInterface>();
         if(player != null){
             Debug.Log("Something detected!");
-            player.pickupGolden(amount);
+            PlayerStateManager.goldenAmount += amount;
             Destroy(gameObject);
         }
     }
-
 }
